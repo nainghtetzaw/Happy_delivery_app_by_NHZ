@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="20dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgRestaurantProfile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/burger" />
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:layout_marginStart="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRestaurantProfileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Really Cool Burgers"
+            android:textColor="@color/color_black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRestaurantProfileType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRestaurantProfileName"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Burger - Western Food - $$"
+            android:textSize="15dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRestaurantProfileRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRestaurantProfileType"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@drawable/ic_baseline_star_24"
+            android:text="4.6"
+            android:textColor="@color/color_pink"
+            android:textSize="17dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRestaurantProfileRatingAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRestaurantProfileType"
+            android:layout_alignBaseline="@id/tvRestaurantProfileRating"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/tvRestaurantProfileRating"
+            android:text="(120 ratings)" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgRestaurantProfileLocation"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/tvRestaurantProfileRating"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_baseline_location_on_24" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRestaurantProfileLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRestaurantProfileRating"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_toEndOf="@id/imgRestaurantProfileLocation"
+            android:text="123 Rock Street, New York City" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

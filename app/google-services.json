@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "315225120815",
+    "firebase_url": "https://happy-delivery-app-nhz.firebaseio.com",
+    "project_id": "happy-delivery-app-nhz",
+    "storage_bucket": "happy-delivery-app-nhz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315225120815:android:6a9ab6feea02da4f51e6da",
+        "android_client_info": {
+          "package_name": "com.nhz.happy_delivery_app_by_nhz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315225120815-07nl3el6f2p6i1hcb6cr6nt9d2qbjc8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqhluvZk8jVvytDcKMQdGMPlQxLHAA4iM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315225120815-07nl3el6f2p6i1hcb6cr6nt9d2qbjc8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
