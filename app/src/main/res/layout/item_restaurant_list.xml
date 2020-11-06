@@ -19,7 +19,6 @@
                 android:id="@+id/imgRestaurant"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/burger"
                 android:scaleType="centerCrop"/>
 
             <androidx.appcompat.widget.AppCompatTextView

@@ -9,6 +9,6 @@ import com.nhz.happy_delivery_app_by_nhz.mvp.views.ProfileView
 interface ProfilePresenter : BasePresenter<ProfileView> {
 
     fun onUiReady(lifecycleOwner: LifecycleOwner)
-    fun onPhotoTaken(bitmap: Bitmap,onSuccess : (imgUrl : String) -> Unit)
-    fun onTapSaveBtn(user : UserVO)
+    fun onPhotoTaken(bitmap: Bitmap, onSuccess: (imgUrl: String) -> Unit)
+    fun onTapSaveBtn(user: UserVO)
 }

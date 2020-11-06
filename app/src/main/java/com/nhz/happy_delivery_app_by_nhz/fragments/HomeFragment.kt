@@ -1,12 +1,15 @@
 package com.nhz.happy_delivery_app_by_nhz.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.nhz.happy_delivery_app_by_nhz.R
 import com.nhz.happy_delivery_app_by_nhz.activities.LoginActivity
 import com.nhz.happy_delivery_app_by_nhz.activities.OrderActivity
@@ -26,14 +29,16 @@ class HomeFragment : Fragment(),HomeView {
     private lateinit var mRestaurantListAdapter : RestaurantListAdapter
     private lateinit var mLinearLayoutManager : LinearLayoutManager
     private lateinit var mPresenter : HomePresenter
+    private var mRestaurantNameList : ArrayList<String> = arrayListOf()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setUpPresenter()
         setUpRecyclerView()
         activity?.let {
-            mPresenter.onUiReady(this,it.applicationContext)
-            imgMenu.setOnClickListener {
-                startActivity(ProfileActivity.newIntent(it.context))
+            if (isAdded){
+                mPresenter.onUiReady(this,it.applicationContext)
+                setUpAutoCompleteTextView(it)
+                setUpListener()
             }
         }
         super.onViewCreated(view, savedInstanceState)
@@ -63,17 +68,39 @@ class HomeFragment : Fragment(),HomeView {
         mPresenter.initPresenter(this)
     }
 
+    private fun setUpAutoCompleteTextView(context: Context){
+        val adapter : ArrayAdapter<String> = ArrayAdapter(context,R.layout.autocompletetextview_layout,mRestaurantNameList)
+        autoCompleteSearchBox.setAdapter(adapter)
+    }
+
+    private fun setUpListener(){
+        imgHomeProfile.setOnClickListener {
+            startActivity(ProfileActivity.newIntent(it.context))
+        }
+    }
+
     override fun setNewRestaurantType(data: List<RestaurantTypeVO>) {
         mFoodTypeAdapter.setNewData(data.toMutableList())
     }
 
     override fun setNewRestaurantList(data: List<RestaurantVO>) {
+        data.forEach {
+            mRestaurantNameList.add(it.name)
+        }
         mRestaurantListAdapter.setNewData(data.toMutableList())
     }
 
     override fun navigateToRestaurantDetail(id : Int) {
         activity?.let {
             startActivity(RestaurantDetailActivity.newIntent(it,id))
+        }
+    }
+
+    override fun showUserProfile(imageUrl: String) {
+        if(imageUrl.isNotEmpty()){
+            Glide.with(this)
+                .load(imageUrl)
+                .into(imgHomeProfile)
         }
     }
 }

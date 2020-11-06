@@ -2,4 +2,6 @@
     <string name="app_name">happy_delivery_app_by_NHZ</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_empty_order">There is no food ordered !</string>
+    <string name="tv_start_order">Start Ordering</string>
 </resources>

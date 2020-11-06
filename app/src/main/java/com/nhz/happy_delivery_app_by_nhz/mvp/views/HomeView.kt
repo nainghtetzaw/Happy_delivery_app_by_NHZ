@@ -8,5 +8,6 @@ interface HomeView : BaseView {
     fun setNewRestaurantType(data : List<RestaurantTypeVO>)
     fun setNewRestaurantList(data : List<RestaurantVO>)
     fun navigateToRestaurantDetail(id : Int)
+    fun showUserProfile(imageUrl : String)
 
 }

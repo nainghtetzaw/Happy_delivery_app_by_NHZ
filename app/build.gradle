@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion 30
@@ -61,6 +62,9 @@ dependencies {
     //Authentication
     implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
 
+    //Crashlytic
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+
     def room_version = "2.2.5"
     def lifecycle_version = "2.2.0"
 
@@ -83,5 +87,10 @@ dependencies {
 
     // Work Manager
     implementation "androidx.work:work-runtime:2.3.1"
+
+    //RXKotlin
+    implementation("io.reactivex.rxjava3:rxkotlin:3.0.1")
+
+
 
 }

@@ -36,6 +36,7 @@ class SignUpActivity : AppCompatActivity(),SignUpView {
                 onSuccess = { pass,username ->
                     if (pass){
                         startActivity(HomeActivity.newIntent(this))
+                        finish()
                     }
                 },onError = {
                     Toast.makeText(this,it,Toast.LENGTH_SHORT).show()

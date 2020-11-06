@@ -33,6 +33,7 @@ class LoginActivity : AppCompatActivity(),LoginView {
             mPresenter.login(etEmail.text.toString(),etPassword.text.toString(),onSuccess = {
                 if(it){
                     startActivity(HomeActivity.newIntent(this))
+                    finish()
                 }
             },onError = {
                 Toast.makeText(this,it,Toast.LENGTH_SHORT).show()

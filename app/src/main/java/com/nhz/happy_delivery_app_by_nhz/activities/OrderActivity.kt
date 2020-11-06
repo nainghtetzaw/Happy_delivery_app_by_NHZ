@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.LocusId
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -50,8 +51,6 @@ class OrderActivity : AppCompatActivity(),OrderFoodView {
                 show(supportFragmentManager,tag)
             }
         }
-
-
     }
 
     private fun setUpRecyclerView(){
@@ -66,6 +65,18 @@ class OrderActivity : AppCompatActivity(),OrderFoodView {
         mPresenter.initPresenter(this)
     }
 
+    override fun showEmptyView(){
+        vpEmpty.visibility = View.VISIBLE
+    }
+
+    override fun hideEmptyView(){
+        vpEmpty.visibility = View.GONE
+    }
+
+    override fun hideOrderView() {
+        nestedScrollView.visibility = View.GONE
+    }
+
     override fun showOrderedFoods(data: List<OrderedFoodListVO>, restaurant: RestaurantVO) {
         mAdapter.setNewData(data.toMutableList())
 
@@ -73,11 +84,11 @@ class OrderActivity : AppCompatActivity(),OrderFoodView {
         data.forEach {
             subTotal += (it.price * it.quantity)
         }
-        tvOrderSubtotalAmount.text = "$$subTotal"
 
         Glide.with(this)
             .load(restaurant.image)
             .into(imgRestaurantProfile)
+        tvOrderSubtotalAmount.text = "$$subTotal"
         tvRestaurantProfileName.text = restaurant.name
         tvRestaurantProfileType.text = "${restaurant.food_type} - ${restaurant.restaurant_type} - $$"
         tvRestaurantProfileRating.text = restaurant.rating.toString()

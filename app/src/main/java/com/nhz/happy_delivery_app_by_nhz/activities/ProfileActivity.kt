@@ -26,8 +26,6 @@ class ProfileActivity : AppCompatActivity(),ProfileView {
     private var imageUrl : String = ""
 
     companion object{
-        const val USERNAME = "USERNAME"
-
         fun newIntent(context: Context) : Intent {
             return  Intent(context,ProfileActivity::class.java)
         }
@@ -37,19 +35,9 @@ class ProfileActivity : AppCompatActivity(),ProfileView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         setUpPresenter()
-        tvCancel.setOnClickListener { finish() }
 
         mPresenter.onUiReady(this)
-
-        imgOpenGallery.setOnClickListener {
-            openGallary()
-        }
-
-        tvSave.setOnClickListener {
-            mPresenter.onTapSaveBtn(mUserData)
-            startActivity(HomeActivity.newIntent(this))
-        }
-
+        setUpListeners()
     }
 
     @RequiresApi(Build.VERSION_CODES.R)
@@ -113,5 +101,19 @@ class ProfileActivity : AppCompatActivity(),ProfileView {
         intent.type = "image/*"
         intent.action = Intent.ACTION_GET_CONTENT
         startActivityForResult(intent, REQUEST_CODE)
+    }
+
+    private fun setUpListeners(){
+        imgOpenGallery.setOnClickListener {
+            openGallary()
+        }
+        tvSave.setOnClickListener {
+            mPresenter.onTapSaveBtn(mUserData)
+            startActivity(HomeActivity.newIntent(this))
+            finish()
+        }
+        tvCancel.setOnClickListener {
+            finish()
+        }
     }
 }

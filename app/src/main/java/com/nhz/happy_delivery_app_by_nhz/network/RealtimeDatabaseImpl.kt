@@ -14,9 +14,11 @@ import com.nhz.happy_delivery_app_by_nhz.data.vos.OrderedFoodListVO
 import com.nhz.happy_delivery_app_by_nhz.data.vos.RestaurantTypeVO
 import com.nhz.happy_delivery_app_by_nhz.data.vos.RestaurantVO
 import com.nhz.happy_delivery_app_by_nhz.data.vos.UserVO
+import io.reactivex.rxjava3.core.Observable
 import java.io.ByteArrayOutputStream
 import java.net.URL
 import java.util.*
+import kotlin.collections.ArrayList
 
 object RealtimeDatabaseImpl : FirebaseAPI {
 
@@ -89,13 +91,14 @@ object RealtimeDatabaseImpl : FirebaseAPI {
         })
     }
 
-    override fun getAllUserDataByUsername(
+    override fun getAllUserDataByUserId(
         username: String,
         onSuccess: (data: UserVO) -> Unit,
         onFailure: (message: String) -> Unit
     ) {
         mDatabase.child("users").child(username).addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+
                 var user = UserVO()
                 snapshot.children.forEach { dataSnapshot ->
                     dataSnapshot.getValue(UserVO::class.java)?.let{

@@ -15,7 +15,6 @@
             android:id="@+id/imgFoodType"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/gift_transparent_vector"
             android:background="@color/color_food_type_background"/>
 
     </androidx.cardview.widget.CardView>

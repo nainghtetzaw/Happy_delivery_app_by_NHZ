@@ -80,4 +80,8 @@ class HomeFragment2 : Fragment(),HomeView {
         }
     }
 
+    override fun showUserProfile(imageUrl: String) {
+
+    }
+
 }

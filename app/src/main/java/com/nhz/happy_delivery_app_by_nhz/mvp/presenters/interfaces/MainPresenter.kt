@@ -5,6 +5,6 @@ import com.nhz.happy_delivery_app_by_nhz.mvp.views.MainView
 
 interface MainPresenter : BasePresenter<MainView> {
 
-    fun getViewTypeFromRemoteConfig() : Long
+    fun getViewTypeFromRemoteConfig(): Long
 
 }

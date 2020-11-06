@@ -49,12 +49,12 @@ object DeliveryModelImpl : DeliveryModel, BaseModel() {
         return deliveryDB.restaurantDao().getRestaurantDataById(id)
     }
 
-    override fun getUserDataByUsername(
+    override fun getUserDataByUserId(
         username: String,
         onSuccess: (data: UserVO) -> Unit,
         onFailure: (message: String) -> Unit
     ) {
-        mFirebaseApi.getAllUserDataByUsername(username,onSuccess,onFailure)
+        mFirebaseApi.getAllUserDataByUserId(username,onSuccess,onFailure)
     }
 
     override fun addOrderFoodList(id: Int, name: String, price: Int,counter : Int) {

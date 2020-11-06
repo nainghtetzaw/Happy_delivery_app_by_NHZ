@@ -14,8 +14,7 @@
             android:id="@+id/imgRestaurantDetail"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/burger" />
+            android:scaleType="centerCrop" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgDetailBack"

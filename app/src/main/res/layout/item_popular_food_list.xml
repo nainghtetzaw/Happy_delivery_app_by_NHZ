@@ -21,7 +21,6 @@
         android:id="@+id/imgPopularFood"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/burger_image"
         android:scaleType="centerCrop"/>
 
         <androidx.appcompat.widget.AppCompatTextView

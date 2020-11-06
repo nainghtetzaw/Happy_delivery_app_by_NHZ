@@ -5,6 +5,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.nhz.happy_delivery_app_by_nhz.data.vos.UserVO
+import java.util.*
 
 object FirebaseAuthImpl : FirebaseAuthAPI {
 
@@ -37,7 +38,7 @@ object FirebaseAuthImpl : FirebaseAuthAPI {
                 mFirebaseAuth.currentUser?.updateProfile(
                     UserProfileChangeRequest.Builder().setDisplayName(username).build()
                 )
-                onSuccess(true,UserVO(username,"",email,username))
+                onSuccess(true,UserVO(email.dropLast(10),"",email,username))
             }else{
                 onError(it.exception?.message ?: "")
             }
@@ -46,7 +47,7 @@ object FirebaseAuthImpl : FirebaseAuthAPI {
 
 
     override fun getUserData(): UserVO {
-        return UserVO(mFirebaseAuth.currentUser?.displayName ?: "",
+        return UserVO(mFirebaseAuth.currentUser?.email?.dropLast(10) ?: "",
         mFirebaseAuth.currentUser?.photoUrl.toString(),
             mFirebaseAuth.currentUser?.email ?: "",
         mFirebaseAuth.currentUser?.displayName ?: "")

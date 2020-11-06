@@ -32,61 +32,75 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="5dp"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvPopularChoices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Popular Choices"
-        android:textColor="@color/color_pink"
-        android:textSize="20dp"
-        android:textStyle="bold"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/autoCompleteSearchBox2"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginTop="10dp">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvPopularShowAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show all"
-        android:layout_alignBaseline="@id/tvPopularChoices"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"/>
-    
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPopularChoices"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvPopularChoices"
-        android:layout_marginEnd="20dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvNewRestaurants"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Restaurants"
-        android:textColor="@color/color_pink"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_below="@id/rvPopularChoices"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPopularChoices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Popular Choices"
+                android:textColor="@color/color_pink"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_below="@id/autoCompleteSearchBox2"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvNewRestaurantsShowAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show all"
-        android:layout_alignBaseline="@id/tvNewRestaurants"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"/>
-    
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvNewRestaurants"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvNewRestaurants"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPopularShowAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show all"
+                android:layout_alignBaseline="@id/tvPopularChoices"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPopularChoices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPopularChoices"
+                android:layout_marginEnd="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNewRestaurants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Restaurants"
+                android:textColor="@color/color_pink"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_below="@id/rvPopularChoices"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNewRestaurantsShowAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show all"
+                android:layout_alignBaseline="@id/tvNewRestaurants"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNewRestaurants"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvNewRestaurants"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

@@ -43,8 +43,6 @@ class HomeActivity : AppCompatActivity(),MainView {
     }
 
     private fun identifyFragments(){
-        Toast.makeText(this,mPresenter.getViewTypeFromRemoteConfig().toString(),Toast.LENGTH_SHORT).show()
-
         if (mPresenter.getViewTypeFromRemoteConfig().toInt() == 1){
             supportFragmentManager.beginTransaction()
                 .add(R.id.fragmentContainer,fragment1)
